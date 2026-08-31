@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import nz.co.test.transactions.ui.transactionlist.TransactionListScreen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -14,7 +16,8 @@ class MainActivity : ComponentActivity() {
 
         super.onCreate(savedInstanceState)
         setContent {
-
+            val navController = rememberNavController()
+            TransactionListScreen(navController)
         }
     }
 }
