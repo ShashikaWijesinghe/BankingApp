@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Transactions</string>
     <string name="transaction_list_title">Transactions</string>
+    <string name="transaction_details_title">Transaction Details</string>
     <string name="retry">Retry</string>
-    <string name="loading_error_message">Error loading transactions</string>
+    <string name="transaction_list_loading_error_message">Error loading transactions</string>
+    <string name="transaction_details_loading_error_message">Error loading transaction details</string>
 </resources>

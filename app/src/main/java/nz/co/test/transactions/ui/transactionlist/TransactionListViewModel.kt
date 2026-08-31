@@ -35,7 +35,7 @@ class TransactionListViewModel @Inject constructor(
                 Log.i(TAG, "fetchTransactions: transactions = ${transactions.size}")
                 TransactionListUiState.Success(transactions)
             } catch (e: Exception) {
-                Log.i(TAG, "fetchTransactions: errorMessage = ${e.message}")
+                Log.e(TAG, "fetchTransactions: errorMessage = ${e.message}")
                 TransactionListUiState.Error
             }
         }
