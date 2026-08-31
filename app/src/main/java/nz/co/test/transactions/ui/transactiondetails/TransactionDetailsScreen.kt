@@ -68,7 +68,7 @@ fun TransactionDetailsScreen(
                             .fillMaxWidth()
                             .padding(horizontal = defaultMargin, vertical = smallMargin)
                     ) {
-                        val transaction = (uiState.value as TransactionDetailsUiState.Success).transactions
+                        val transaction = (uiState.value as TransactionDetailsUiState.Success).transaction
                         Column (
                             modifier = Modifier.fillMaxWidth().padding(largeMargin),
                             horizontalAlignment = Alignment.CenterHorizontally

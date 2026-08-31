@@ -18,10 +18,6 @@ class TransactionDetailsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    companion object {
-        private val TAG = TransactionDetailsViewModel::class.simpleName
-    }
-
     private val transactionId: Int = checkNotNull(savedStateHandle["id"])
 
     private val _uiState = MutableStateFlow<TransactionDetailsUiState>(TransactionDetailsUiState.Loading)
@@ -39,7 +35,6 @@ class TransactionDetailsViewModel @Inject constructor(
                     TransactionDetailsUiState.Success(it)
                 } ?: TransactionDetailsUiState.Error
             } catch (e: Exception) {
-                Log.e(TAG, "fetchTransaction: errorMessage = ${e.message}")
                 TransactionDetailsUiState.Error
             }
         }

@@ -89,4 +89,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
 
+    testImplementation(libs.kotlinx.coroutines.test)
 }
