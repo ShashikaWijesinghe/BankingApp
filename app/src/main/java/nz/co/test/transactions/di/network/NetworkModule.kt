@@ -30,6 +30,7 @@ class NetworkModule {
         .build()
 
     @Provides
+    @Singleton
     fun providesTransactionService(retrofit: Retrofit): TransactionsService =
         retrofit.create(TransactionsService::class.java)
 }
