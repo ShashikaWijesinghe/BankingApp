@@ -11,11 +11,13 @@ class TransactionsRepositoryImpl @Inject constructor(
     private var transactions: List<Transaction>? = null
 
     override suspend fun getTransactions(): List<Transaction> =
-        transactions ?: service.retrieveTransactions().asList().also {
-            transactions = it
-        }.sortedByDescending {
-            it.transactionDate
-        }
+        transactions ?: service.retrieveTransactions()
+            .asList()
+            .sortedByDescending {
+                it.transactionDate
+            }.also {
+                transactions = it
+            }
 
     override suspend fun getTransaction(id: Int): Transaction? =
         getTransactions().find { it.id == id }
