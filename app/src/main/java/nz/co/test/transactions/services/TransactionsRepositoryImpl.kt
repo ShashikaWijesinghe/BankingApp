@@ -13,6 +13,8 @@ class TransactionsRepositoryImpl @Inject constructor(
     override suspend fun getTransactions(): List<Transaction> =
         transactions ?: service.retrieveTransactions().asList().also {
             transactions = it
+        }.sortedByDescending {
+            it.transactionDate
         }
 
     override suspend fun getTransaction(id: Int): Transaction? =
